@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Linknest</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgDark: "#0a0908",
+            cardBg: "#171512",
+            textLight: "#eee7dc",
+            textMuted: "#918a80",
+            goldAccent: "#d4af37",
+            goldMuted: "#a98222",
+            borderColor: "rgba(212, 175, 55, 0.15)"
+          },
+
+          fontFamily: {
+            serif: ["Georgia", "serif"],
+            sans: [
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "Roboto",
+              "Arial",
+              "sans-serif"
+            ]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body class="bg-bgDark text-textLight font-sans min-h-screen antialiased flex flex-col">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+
+
+    <!-- Navigation -->
+    <div class="header-right">
+
+      <nav class="main-nav">
+
+        <a href="dashboard.html">
+          Home
+        </a>
+
+        <a href="discover.html">
+          Discover
+        </a>
+
+        <a href="profile.html" class="active">
+          Profile
+        </a>
+
+      </nav>
+
+
+      <!-- User -->
+      <div class="user-profile">
+
+        <div class="avatar">
+          
+        </div>
+
+        <span>
+          
+        </span>
+
+        <svg
+          class="dropdown-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="profile-container">
+
+
+    <!-- Page Heading -->
+
+    <div class="page-heading">
+
+      <span>
+        ACCOUNT
+      </span>
+
+      <h1>
+        My Profile
+      </h1>
+
+      <p>
+        Manage your account, reading preferences, and activity.
+      </p>
+
+    </div>
+
+
+    
+
+
+    <!-- =========================
+         PROFILE GRID
+    ========================== -->
+
+    <div class="profile-grid">
+
+
+      <!-- ACCOUNT DETAILS -->
+
+      <section class="profile-card">
+
+        <div class="card-header">
+
+          <div class="card-heading">
+
+            <div class="card-icon">
+              👤
+            </div>
+
+            <div>
+              <h2>
+                Account Details
+              </h2>
+
+              <p>
+                Your personal information
+              </p>
+            </div>
+
+          </div>
+
+          <button class="edit-button">
+            EDIT
+          </button>
+
+        </div>
+
+
+        <div class="info-list">
+
+          <div class="info-row">
+
+            <span>
+              Name
+            </span>
+
+            <strong>
+              
+            </strong>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <span>
+              Email
+            </span>
+
+            <strong>
+              
+            </strong>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <span>
+              Plan
+            </span>
+
+            <strong class="gold-text">
+              
+            </strong>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <span>
+              Member Since
+            </span>
+
+            <strong>
+              2026
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- READING PREFERENCES -->
+
+      <section class="profile-card">
+
+        <div class="card-header">
+
+          <div class="card-heading">
+
+            <div class="card-icon">
+              ★
+            </div>
+
+            <div>
+              <h2>
+                Reading Preferences
+              </h2>
+
+              <p>
+                Customize your reading experience
+              </p>
+            </div>
+
+          </div>
+
+          <button class="edit-button">
+            EDIT
+          </button>
+
+        </div>
+
+
+        <div class="preference-section">
+
+          <span class="section-label">
+            FAVOURITE GENRES
+          </span>
+
+          <div class="tags">
+
+            <span>Fantasy</span>
+            <span>Romance</span>
+            <span>Mystery</span>
+            <span>Thriller</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="preference-section">
+
+          <span class="section-label">
+            PREFERRED LANGUAGES
+          </span>
+
+          <div class="tags">
+
+            <span>English</span>
+            <span>Japanese</span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- READING STATS -->
+
+      <section class="profile-card">
+
+        <div class="card-heading stats-heading">
+
+          <div class="card-icon">
+            📖
+          </div>
+
+          <div>
+            <h2>
+              Reading Stats
+            </h2>
+
+            <p>
+              Your reading activity
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+          <div class="stat-box">
+
+            <strong>
+              23
+            </strong>
+
+            <span>
+              Books Read
+            </span>
+
+          </div>
+
+
+          <div class="stat-box">
+
+            <strong>
+              2
+            </strong>
+
+            <span>
+              Currently Reading
+            </span>
+
+          </div>
+
+
+          <div class="stat-box">
+
+            <strong>
+              14
+            </strong>
+
+            <span>
+              Want to Read
+            </span>
+
+          </div>
+
+
+          <div class="stat-box">
+
+            <strong>
+              5
+            </strong>
+
+            <span>
+              Purchases
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Reading Goal -->
+
+        <div class="reading-goal">
+
+          <div class="goal-header">
+
+            <span>
+              Reading Goal
+            </span>
+
+            <strong>
+              23 / 30 books
+            </strong>
+
+          </div>
+
+          <div class="progress-bar">
+
+            <div
+              class="progress"
+              style="width: 77%;"
+            ></div>
+
+          </div>
+
+          <div class="goal-footer">
+            77% completed
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SETTINGS -->
+
+      <section class="profile-card">
+
+        <div class="card-heading">
+
+          <div class="card-icon">
+            ⚙
+          </div>
+
+          <div>
+            <h2>
+              Settings
+            </h2>
+
+            <p>
+              Manage your account settings
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="settings-list">
+
+          <a href="edit-profile.html">
+            <span>
+              Edit Profile
+            </span>
+
+            <span>
+              →
+            </span>
+          </a>
+
+
+          <a href="change-password.html">
+            <span>
+              Change Password
+            </span>
+
+            <span>
+              →
+            </span>
+          </a>
+
+
+          <a href="notifications.html">
+            <span>
+              Notification Preferences
+            </span>
+
+            <span>
+              →
+            </span>
+          </a>
+
+
+          <a href="privacy.html">
+            <span>
+              Privacy Settings
+            </span>
+
+            <span>
+              →
+            </span>
+          </a>
+
+
+          <a href="index.html" class="sign-out">
+
+            <span>
+              ⎋
+            </span>
+
+            <span>
+              Sign Out
+            </span>
+
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="site-footer">
+
+    <div>
+
+      <span>
+        Linknest
+      </span>
+
+      <p>
+        © 2026 Linknest. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>

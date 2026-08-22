@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Linknest</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <div class="login-card">
+        <!-- Brand -->
+        <div class="brand">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+            </svg>
+            Linknest
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs"><a>Register</a></div>
+
+        <!-- Title -->
+        <h1 class="title">Join the shelf.</h1>
+        <p class="subtitle">Create an account to track your reading, place orders, and more.</p>
+
+        <!-- Register Form -->
+        <form id="registerForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+                <label class="form-label" for="fullName">Full Name</label>
+                <div class="input-wrapper">
+                    <input id="fullName" type="text" class="form-input" placeholder="Enter your full name" required />
+                </div>
+                <div class="field-error" id="fullNameError"></div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <div class="input-wrapper">
+                    <input id="email" type="email" class="form-input" placeholder="Enter your email" required />
+                </div>
+                <div class="field-error" id="emailError"></div>
+            </div>
+
+            <!-- Security -->
+            <div class="section-divider"><span>Account Security</span></div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="input-wrapper">
+                    <input id="password" type="password" class="form-input" placeholder="Create a password" required />
+                    <button type="button" id="passwordToggle" class="toggle-password" data-target="password"
+                        aria-label="Toggle password visibility">👁</button>
+                </div>
+                <div class="field-hint">Use at least 8 characters, including a number and a special character.</div>
+                <ul class="password-requirements" id="passwordRequirements">
+                    <li data-rule="length">✘ 8+ characters</li>
+                    <li data-rule="number">✘ Contains a number</li>
+                    <li data-rule="special">✘ Contains a special character</li>
+                </ul>
+                <div class="field-error" id="passwordError"></div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label class="form-label" for="confirmPassword">Confirm Password</label>
+                <div class="input-wrapper">
+                    <input id="confirmPassword" type="password" class="form-input" placeholder="Re-enter your password"
+                        required />
+                    <button type="button" class="toggle-password" data-target="confirmPassword"
+                        aria-label="Toggle password visibility">👁</button>
+                </div>
+                <div class="field-error" id="confirmError"></div>
+            </div>
+
+            <!-- Terms & Privacy -->
+            <div class="section-divider"><span>Terms & Privacy</span></div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" />
+                <label for="terms">
+                    I agree to the <a href="terms_and_service.html">Terms of Service</a> and <a
+                        href="privacy.html">Privacy Policy</a>.
+                </label>
+            </div>
+            <div class="field-error" id="termsError"></div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="age" />
+                <label for="age">I confirm that I am at least 13 years of age.</label>
+            </div>
+            <div class="field-error" id="ageError"></div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-primary">Create Account</button>
+
+            <!-- Footer -->
+            <p class="footer-text">Already have an account? <a href="index.html">Sign in</a></p>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linknest</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- =========================
+       TOP HEADER
+  ========================== -->
+  <header>
+    <div class="brand">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h13V2zM6 4h11v14H6V4z"/>
+      </svg>
+      Linknest
+    </div>
+    <nav>
+      <a href="dashboard.html" class="active">Home</a>
+      <a href="discover.html">Discover</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+    <div class="user-profile" id="userProfile">
+      <div class="avatar">U</div>
+      <span>▼</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       SEARCH BAR – VISIBLE
+  ========================== -->
+  <div class="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search books, authors, or genres..."
+    >
+  </div>
+
+  <!-- No results message -->
+  <div id="noResults" style="display: none;">
+    <p>📚 No books found</p>
+    <p>Try a different keyword.</p>
+  </div>
+
+  <!-- =========================
+       RECOMMENDED FOR YOU
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">★ PERSONALIZED</div>
+        <h2 class="section-title">Recommended for You</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Book 1 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book1.jpg" alt="The Great Gatsby">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">The Great Gatsby</div>
+        <div class="book-author">F. Scott Fitzgerald</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book2.jpg" alt="Atomic Habits">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">Atomic Habits</div>
+        <div class="book-author">James Clear</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Book 7 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book7.jpg" alt="Harry Potter">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">Harry Potter</div>
+        <div class="book-author">J.K. Rowling</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.9</span>
+        </div>
+      </div>
+
+      <!-- Book 11 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book11.jpg" alt="The Midnight Library">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">The Midnight Library</div>
+        <div class="book-author">Matt Haig</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fiction</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CLASSIC
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">📖 GENRE</div>
+        <h2 class="section-title">Classic</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 1 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book1.jpg" alt="The Great Gatsby">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">The Great Gatsby</div>
+        <div class="book-author">F. Scott Fitzgerald</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 13 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book13.jpg" alt="To Kill a Mockingbird">
+        </div>
+        <div class="book-title">To Kill a Mockingbird</div>
+        <div class="book-author">Harper Lee</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Book 14 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book14.jpg" alt="Little Women">
+        </div>
+        <div class="book-title">Little Women</div>
+        <div class="book-author">Louisa May Alcott</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 15 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book15.jpg" alt="The Catcher in the Rye">
+        </div>
+        <div class="book-title">The Catcher in the Rye</div>
+        <div class="book-author">J.D. Salinger</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.3</span>
+        </div>
+      </div>
+
+      <!-- Book 16 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book16.jpg" alt="Jane Eyre">
+        </div>
+        <div class="book-title">Jane Eyre</div>
+        <div class="book-author">Charlotte Brontë</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Book 17 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book17.jpg" alt="The Picture of Dorian Gray">
+        </div>
+        <div class="book-title">The Picture of Dorian Gray</div>
+        <div class="book-author">Oscar Wilde</div>
+        <div class="book-meta">
+          <span class="genre-tag">Classic</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SELF HELP
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">🧠 GENRE</div>
+        <h2 class="section-title">Self Help</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 2 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book2.jpg" alt="Atomic Habits">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">Atomic Habits</div>
+        <div class="book-author">James Clear</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Book 18 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book18.jpg" alt="The 7 Habits of Highly Effective People">
+        </div>
+        <div class="book-title">The 7 Habits of Highly Effective People</div>
+        <div class="book-author">Stephen R. Covey</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Book 19 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book19.jpg" alt="How to Win Friends and Influence People">
+        </div>
+        <div class="book-title">How to Win Friends and Influence People</div>
+        <div class="book-author">Dale Carnegie</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Book 20 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book20.jpg" alt="The Power of Now">
+        </div>
+        <div class="book-title">The Power of Now</div>
+        <div class="book-author">Eckhart Tolle</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 21 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book21.jpg" alt="Deep Work">
+        </div>
+        <div class="book-title">Deep Work</div>
+        <div class="book-author">Cal Newport</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 22 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book22.jpg" alt="The Subtle Art of Not Giving a F*ck">
+        </div>
+        <div class="book-title">The Subtle Art of Not Giving a F*ck</div>
+        <div class="book-author">Mark Manson</div>
+        <div class="book-meta">
+          <span class="genre-tag">Self Help</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       DYSTOPIAN
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">🌑 GENRE</div>
+        <h2 class="section-title">Dystopian</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 4 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book4.jpg" alt="1984">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">1984</div>
+        <div class="book-author">George Orwell</div>
+        <div class="book-meta">
+          <span class="genre-tag">Dystopian</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FINANCE
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">💰 GENRE</div>
+        <h2 class="section-title">Finance</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 5 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book5.jpg" alt="The Psychology of Money">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">The Psychology of Money</div>
+        <div class="book-author">Morgan Housel</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Existing: Book 6 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book6.jpg" alt="Rich Dad Poor Dad">
+        </div>
+        <div class="book-title">Rich Dad Poor Dad</div>
+        <div class="book-author">Robert Kiyosaki</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 23 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book23.jpg" alt="The Intelligent Investor">
+        </div>
+        <div class="book-title">The Intelligent Investor</div>
+        <div class="book-author">Benjamin Graham</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 24 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book24.jpg" alt="I Will Teach You to Be Rich">
+        </div>
+        <div class="book-title">I Will Teach You to Be Rich</div>
+        <div class="book-author">Ramit Sethi</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 25 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book25.jpg" alt="Your Money or Your Life">
+        </div>
+        <div class="book-title">Your Money or Your Life</div>
+        <div class="book-author">Vicki Robin</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.4</span>
+        </div>
+      </div>
+
+      <!-- Book 26 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book26.jpg" alt="The Richest Man in Babylon">
+        </div>
+        <div class="book-title">The Richest Man in Babylon</div>
+        <div class="book-author">George S. Clason</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 27 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book27.jpg" alt="One Up On Wall Street">
+        </div>
+        <div class="book-title">One Up On Wall Street</div>
+        <div class="book-author">Peter Lynch</div>
+        <div class="book-meta">
+          <span class="genre-tag">Finance</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FANTASY
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">🧙 GENRE</div>
+        <h2 class="section-title">Fantasy</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 7 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book7.jpg" alt="Harry Potter">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">Harry Potter</div>
+        <div class="book-author">J.K. Rowling</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.9</span>
+        </div>
+      </div>
+
+      <!-- Existing: Book 8 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book8.jpg" alt="The Hobbit">
+        </div>
+        <div class="book-title">The Hobbit</div>
+        <div class="book-author">J.R.R. Tolkien</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Book 28 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book28.jpg" alt="The Lord of the Rings">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">The Lord of the Rings</div>
+        <div class="book-author">J.R.R. Tolkien</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.9</span>
+        </div>
+      </div>
+
+      <!-- Book 29 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book29.jpg" alt="Percy Jackson and the Olympians">
+        </div>
+        <div class="book-title">Percy Jackson and the Olympians</div>
+        <div class="book-author">Rick Riordan</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Book 30 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book30.jpg" alt="A Game of Thrones">
+        </div>
+        <div class="book-title">A Game of Thrones</div>
+        <div class="book-author">George R.R. Martin</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Book 31 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book31.jpg" alt="The Chronicles of Narnia">
+        </div>
+        <div class="book-title">The Chronicles of Narnia</div>
+        <div class="book-author">C.S. Lewis</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.8</span>
+        </div>
+      </div>
+
+      <!-- Book 32 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book32.jpg" alt="The Name of the Wind">
+        </div>
+        <div class="book-title">The Name of the Wind</div>
+        <div class="book-author">Patrick Rothfuss</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fantasy</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       ROMANCE
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">❤️ GENRE</div>
+        <h2 class="section-title">Romance</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 9 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book9.jpg" alt="Pride and Prejudice">
+        </div>
+        <div class="book-title">Pride and Prejudice</div>
+        <div class="book-author">Jane Austen</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.7</span>
+        </div>
+      </div>
+
+      <!-- Existing: Book 12 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book12.jpg" alt="It Ends With Us">
+        </div>
+        <div class="book-title">It Ends With Us</div>
+        <div class="book-author">Colleen Hoover</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.4</span>
+        </div>
+      </div>
+
+      <!-- Book 33 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book33.jpg" alt="The Notebook">
+        </div>
+        <div class="book-title">The Notebook</div>
+        <div class="book-author">Nicholas Sparks</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 34 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book34.jpg" alt="Me Before You">
+        </div>
+        <div class="book-title">Me Before You</div>
+        <div class="book-author">Jojo Moyes</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 35 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book35.jpg" alt="The Fault in Our Stars">
+        </div>
+        <div class="book-title">The Fault in Our Stars</div>
+        <div class="book-author">John Green</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 36 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book36.jpg" alt="The Love Hypothesis">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">The Love Hypothesis</div>
+        <div class="book-author">Ali Hazelwood</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 37 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book37.jpg" alt="Eleanor & Park">
+        </div>
+        <div class="book-title">Eleanor &amp; Park</div>
+        <div class="book-author">Rainbow Rowell</div>
+        <div class="book-meta">
+          <span class="genre-tag">Romance</span>
+          <span class="rating">4.4</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       THRILLER
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">🔪 GENRE</div>
+        <h2 class="section-title">Thriller</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 10 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book10.jpg" alt="The Silent Patient">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">The Silent Patient</div>
+        <div class="book-author">Alex Michaelides</div>
+        <div class="book-meta">
+          <span class="genre-tag">Thriller</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Book 38 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book38.jpg" alt="Gone Girl">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <div class="book-title">Gone Girl</div>
+        <div class="book-author">Gillian Flynn</div>
+        <div class="book-meta">
+          <span class="genre-tag">Thriller</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 39 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book39.jpg" alt="The Girl on the Train">
+        </div>
+        <div class="book-title">The Girl on the Train</div>
+        <div class="book-author">Paula Hawkins</div>
+        <div class="book-meta">
+          <span class="genre-tag">Thriller</span>
+          <span class="rating">4.3</span>
+        </div>
+      </div>
+
+      <!-- Book 40 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book40.jpg" alt="The Da Vinci Code">
+        </div>
+        <div class="book-title">The Da Vinci Code</div>
+        <div class="book-author">Dan Brown</div>
+        <div class="book-meta">
+          <span class="genre-tag">Thriller</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 41 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book41.jpg" alt="The Woman in the Window">
+        </div>
+        <div class="book-title">The Woman in the Window</div>
+        <div class="book-author">A.J. Finn</div>
+        <div class="book-meta">
+          <span class="genre-tag">Thriller</span>
+          <span class="rating">4.2</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FICTION
+  ========================== -->
+  <section class="shelf-container">
+
+    <div class="section-header">
+      <div>
+        <div class="category-badge">📕 GENRE</div>
+        <h2 class="section-title">Fiction</h2>
+      </div>
+
+      <a href="#" class="see-all">SEE ALL &gt;</a>
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Existing: Book 3 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book3.jpg" alt="The Alchemist">
+        </div>
+        <div class="book-title">The Alchemist</div>
+        <div class="book-author">Paulo Coelho</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fiction</span>
+          <span class="rating">4.6</span>
+        </div>
+      </div>
+
+      <!-- Existing: Book 11 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book11.jpg" alt="The Midnight Library">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">The Midnight Library</div>
+        <div class="book-author">Matt Haig</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fiction</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+      <!-- Book 42 -->
+      <div class="book-card">
+        <div class="cover-wrapper">
+          <img src="images/book42.jpg" alt="Where the Crawdads Sing">
+          <span class="badge new">New</span>
+        </div>
+        <div class="book-title">Where the Crawdads Sing</div>
+        <div class="book-author">Delia Owens</div>
+        <div class="book-meta">
+          <span class="genre-tag">Fiction</span>
+          <span class="rating">4.5</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="js/script.js"></script>
+</body>
+</html>
