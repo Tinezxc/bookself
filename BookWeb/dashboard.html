@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linknest</title>
+  <title>Litnest</title>
   <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
 
   <!-- =========================
@@ -14,13 +16,12 @@
   <header>
     <div class="brand">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h13V2zM6 4h11v14H6V4z"/>
+        <path d="M19 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h13V2zM6 4h11v14H6V4z" />
       </svg>
-      Linknest
+      Litnest
     </div>
     <nav>
       <a href="dashboard.html" class="active">Home</a>
-      <a href="discover.html">Discover</a>
       <a href="profile.html">Profile</a>
     </nav>
     <div class="user-profile" id="userProfile">
@@ -36,16 +37,12 @@
        SEARCH BAR – VISIBLE
   ========================== -->
   <div class="search-bar">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search books, authors, or genres..."
-    >
+    <input type="text" id="searchInput" placeholder="Search books, authors, or genres...">
   </div>
 
   <!-- No results message -->
   <div id="noResults" style="display: none;">
-    <p>📚 No books found</p>
+    <p>No books found</p>
     <p>Try a different keyword.</p>
   </div>
 
@@ -837,9 +834,21 @@
           <span class="rating">4.5</span>
         </div>
       </div>
-
-    </div>
   </section>
-  <script src="js/script.js"></script>
+  <!-- =========================
+       FOOTER – CENTERED
+  ========================== -->
+  <footer class="site-footer"
+    style="text-align: center; padding: 30px 0 20px; border-top: 1px solid rgba(212, 175, 55, 0.15); margin-top: 40px; color: var(--text-muted); font-size: 12px; letter-spacing: 1px;">
+    <div>
+      <span
+        style="font-family: Georgia, serif; font-size: 14px; color: var(--gold-light); display: block; margin-bottom: 4px;">Litnest</span>
+      <p style="margin: 0;">&copy; 2026 Litnest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/db.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
+
 </html>

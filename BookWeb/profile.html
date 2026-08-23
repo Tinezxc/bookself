@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Litnest · Profile</title>
 
-  <title>Linknest</title>
-
-  <!-- Tailwind CSS -->
+  <!-- Tailwind (optional layout helper) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
@@ -22,504 +20,190 @@
             goldMuted: "#a98222",
             borderColor: "rgba(212, 175, 55, 0.15)"
           },
-
           fontFamily: {
             serif: ["Georgia", "serif"],
-            sans: [
-              "-apple-system",
-              "BlinkMacSystemFont",
-              "Segoe UI",
-              "Roboto",
-              "Arial",
-              "sans-serif"
-            ]
+            sans: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Arial", "sans-serif"]
           }
         }
       }
     }
   </script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/profile.css">
+  <!-- Main profile styles -->
+  <link rel="stylesheet" href="css/profile.css" />
 </head>
 
 <body class="bg-bgDark text-textLight font-sans min-h-screen antialiased flex flex-col">
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
-
-
-
-    <!-- Navigation -->
     <div class="header-right">
-
       <nav class="main-nav">
-
-        <a href="dashboard.html">
-          Home
-        </a>
-
-        <a href="discover.html">
-          Discover
-        </a>
-
-        <a href="profile.html" class="active">
-          Profile
-        </a>
-
+        <a href="dashboard.html">Home</a>
+        <a href="profile.html" class="active">Profile</a>
       </nav>
-
-
-      <!-- User -->
       <div class="user-profile">
-
-        <div class="avatar">
-          
-        </div>
-
-        <span>
-          
-        </span>
-
-        <svg
-          class="dropdown-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          />
+        <div class="avatar" id="headerAvatar">U</div>
+        <span>▼</span>
+        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
-
       </div>
-
     </div>
-
   </header>
 
-
-  <!-- =========================
-       MAIN
-  ========================== -->
-
-  <main class="profile-container">
-
-
-    <!-- Page Heading -->
+  <!-- ===== MAIN ===== -->
+  <main id="profileContainer" class="profile-container">
 
     <div class="page-heading">
-
-      <span>
-        ACCOUNT
-      </span>
-
-      <h1>
-        My Profile
-      </h1>
-
-      <p>
-        Manage your account, reading preferences, and activity.
-      </p>
-
+      <span>ACCOUNT</span>
+      <h1>My Profile</h1>
+      <p>Manage your account, reading preferences, and activity.</p>
     </div>
-
-
-    
-
-
-    <!-- =========================
-         PROFILE GRID
-    ========================== -->
 
     <div class="profile-grid">
 
-
       <!-- ACCOUNT DETAILS -->
-
       <section class="profile-card">
-
         <div class="card-header">
-
           <div class="card-heading">
-
-            <div class="card-icon">
-              👤
-            </div>
-
+            <div class="card-icon">👤</div>
             <div>
-              <h2>
-                Account Details
-              </h2>
-
-              <p>
-                Your personal information
-              </p>
+              <h2>Account Details</h2>
+              <p>Your personal information</p>
             </div>
-
           </div>
-
-          <button class="edit-button">
-            EDIT
-          </button>
-
+          <button id="editAccountBtn" class="edit-button">EDIT</button>
         </div>
-
-
         <div class="info-list">
-
           <div class="info-row">
-
-            <span>
-              Name
-            </span>
-
-            <strong>
-              
-            </strong>
-
+            <span>Name</span>
+            <strong id="profileName">—</strong>
           </div>
-
-
           <div class="info-row">
-
-            <span>
-              Email
-            </span>
-
-            <strong>
-              
-            </strong>
-
+            <span>Email</span>
+            <strong id="profileEmail">—</strong>
           </div>
-
-
           <div class="info-row">
-
-            <span>
-              Plan
-            </span>
-
-            <strong class="gold-text">
-              
-            </strong>
-
+            <span>Plan</span>
+            <strong id="profilePlan" class="gold-text">—</strong>
           </div>
-
-
           <div class="info-row">
-
-            <span>
-              Member Since
-            </span>
-
-            <strong>
-              2026
-            </strong>
-
+            <span>Member Since</span>
+            <strong id="profileSince">—</strong>
           </div>
-
         </div>
-
+        <button id="saveProfileBtn" class="edit-button" style="display:none; margin-top:12px;">
+          SAVE PROFILE
+        </button>
       </section>
-
 
       <!-- READING PREFERENCES -->
-
       <section class="profile-card">
-
         <div class="card-header">
-
           <div class="card-heading">
-
-            <div class="card-icon">
-              ★
-            </div>
-
+            <div class="card-icon">★</div>
             <div>
-              <h2>
-                Reading Preferences
-              </h2>
-
-              <p>
-                Customize your reading experience
-              </p>
+              <h2>Reading Preferences</h2>
+              <p>Customize your reading experience</p>
             </div>
-
           </div>
-
-          <button class="edit-button">
-            EDIT
-          </button>
-
+          <button id="editPrefsBtn" class="edit-button">EDIT</button>
         </div>
-
 
         <div class="preference-section">
-
-          <span class="section-label">
-            FAVOURITE GENRES
-          </span>
-
-          <div class="tags">
-
-            <span>Fantasy</span>
-            <span>Romance</span>
-            <span>Mystery</span>
-            <span>Thriller</span>
-
-          </div>
-
+          <span class="section-label">FAVOURITE GENRES</span>
+          <div id="genreTags" class="tags"><span>—</span></div>
         </div>
-
-
         <div class="preference-section">
-
-          <span class="section-label">
-            PREFERRED LANGUAGES
-          </span>
-
-          <div class="tags">
-
-            <span>English</span>
-            <span>Japanese</span>
-
-          </div>
-
+          <span class="section-label">PREFERRED LANGUAGES</span>
+          <div id="langTags" class="tags"><span>—</span></div>
         </div>
 
+        <button id="savePrefsBtn" class="edit-button" style="display:none; margin-top:12px;">
+          SAVE PREFERENCES
+        </button>
       </section>
 
-
-      <!-- READING STATS -->
-
-      <section class="profile-card">
-
-        <div class="card-heading stats-heading">
-
-          <div class="card-icon">
-            📖
+      <!-- READING STATS (full width) -->
+      <section class="profile-card" style="grid-column: 1 / -1;">
+        <div class="card-header">
+          <div class="card-heading">
+            <div class="card-icon">📚</div>
+            <div>
+              <h2>Reading Stats</h2>
+              <p>Your reading activity at a glance</p>
+            </div>
           </div>
-
-          <div>
-            <h2>
-              Reading Stats
-            </h2>
-
-            <p>
-              Your reading activity
-            </p>
-          </div>
-
         </div>
-
 
         <div class="stats-grid">
-
           <div class="stat-box">
-
-            <strong>
-              23
-            </strong>
-
-            <span>
-              Books Read
-            </span>
-
+            <strong id="statBooksRead">0</strong>
+            <span>Books Read</span>
           </div>
-
-
           <div class="stat-box">
-
-            <strong>
-              2
-            </strong>
-
-            <span>
-              Currently Reading
-            </span>
-
+            <strong id="statCurrentlyReading">0</strong>
+            <span>Currently Reading</span>
           </div>
-
-
           <div class="stat-box">
-
-            <strong>
-              14
-            </strong>
-
-            <span>
-              Want to Read
-            </span>
-
+            <strong id="statWantToRead">0</strong>
+            <span>Want to Read</span>
           </div>
-
-
           <div class="stat-box">
-
-            <strong>
-              5
-            </strong>
-
-            <span>
-              Purchases
-            </span>
-
+            <strong id="statPurchases">0</strong>
+            <span>Purchases</span>
           </div>
-
         </div>
-
-
-        <!-- Reading Goal -->
 
         <div class="reading-goal">
-
           <div class="goal-header">
-
-            <span>
-              Reading Goal
-            </span>
-
-            <strong>
-              23 / 30 books
-            </strong>
-
+            <span>📖 Reading Goal</span>
+            <strong id="goalText">0 / 20 books</strong>
           </div>
-
           <div class="progress-bar">
-
-            <div
-              class="progress"
-              style="width: 77%;"
-            ></div>
-
+            <div class="progress" id="goalProgress" style="width:0%;"></div>
           </div>
-
-          <div class="goal-footer">
-            77% completed
-          </div>
-
+          <div class="goal-footer" id="goalPercent">0% completed</div>
         </div>
-
       </section>
 
-
-      <!-- SETTINGS -->
-
-      <section class="profile-card">
-
-        <div class="card-heading">
-
-          <div class="card-icon">
-            ⚙
+      <!-- SETTINGS & SIGN OUT (full width) -->
+      <section class="profile-card" style="grid-column: 1 / -1;">
+        <div class="card-header">
+          <div class="card-heading">
+            <div class="card-icon">⚙️</div>
+            <div>
+              <h2>Settings</h2>
+              <p>Account actions &amp; preferences</p>
+            </div>
           </div>
-
-          <div>
-            <h2>
-              Settings
-            </h2>
-
-            <p>
-              Manage your account settings
-            </p>
-          </div>
-
         </div>
-
 
         <div class="settings-list">
-
-          <a href="edit-profile.html">
-            <span>
-              Edit Profile
-            </span>
-
-            <span>
-              →
-            </span>
+          <a href="#" id="signOutBtn" class="sign-out-link">
+            <span>🚪 Sign Out</span>
+            <span>→</span>
           </a>
-
-
-          <a href="change-password.html">
-            <span>
-              Change Password
-            </span>
-
-            <span>
-              →
-            </span>
-          </a>
-
-
-          <a href="notifications.html">
-            <span>
-              Notification Preferences
-            </span>
-
-            <span>
-              →
-            </span>
-          </a>
-
-
-          <a href="privacy.html">
-            <span>
-              Privacy Settings
-            </span>
-
-            <span>
-              →
-            </span>
-          </a>
-
-
-          <a href="index.html" class="sign-out">
-
-            <span>
-              ⎋
-            </span>
-
-            <span>
-              Sign Out
-            </span>
-
-          </a>
-
         </div>
-
       </section>
 
-    </div>
-
+    </div><!-- /profile-grid -->
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-
     <div>
-
-      <span>
-        Linknest
-      </span>
-
-      <p>
-        © 2026 Linknest. All rights reserved.
-      </p>
-
+      <span>Litnest</span>
+      <p>&copy; 2026 Litnest. All rights reserved.</p>
     </div>
-
   </footer>
 
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
 
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/db.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 </html>
