@@ -1,0 +1,31 @@
+step by step how to use this code
+
+
+step 1 open your xampp 
+
+step 2 paste this database
+
+-- Create database
+CREATE DATABASE IF NOT EXISTS linknest_db;
+USE linknest_db;
+
+-- Users table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    join_date DATE NOT NULL,
+    plan VARCHAR(50) DEFAULT 'Free',
+    preferences JSON,
+    stats JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+step 3 open your command prompt and paste this
+
+"C:\Users\Administrator\Desktop\BookWeb" "C:\xampp\htdocs\BookWeb" /E /I /H /Y
+
+it's depends of your users name and administrator file url
+
+thanks
