@@ -1,12 +1,12 @@
 // ============================================================
 //  AUTH MODULE – login + register (uses DB API)
 // ============================================================
-(function() {
+(function () {
   'use strict';
 
   console.log('🔐 Auth script loaded');
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
 
@@ -54,7 +54,7 @@
     // Toggle password
     const toggleBtn = document.getElementById('loginToggle');
     if (toggleBtn) {
-      toggleBtn.addEventListener('click', function(e) {
+      toggleBtn.addEventListener('click', function (e) {
         e.preventDefault();
         const input = document.getElementById(this.getAttribute('data-target'));
         if (!input) return;
@@ -74,7 +74,7 @@
 
     // Real-time email validation
     if (email) {
-      email.addEventListener('input', function() {
+      email.addEventListener('input', function () {
         const val = this.value.trim();
         if (val.length === 0) {
           markInput(this, null);
@@ -89,7 +89,7 @@
 
     // Submit
     if (form) {
-      form.addEventListener('submit', async function(e) {
+      form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const emailVal = email ? email.value.trim() : '';
@@ -132,7 +132,7 @@
   }
 
   // ============================================================
-  //  REGISTER
+  //  REGISTER – FIXED to redirect to preferences
   // ============================================================
   function initRegister() {
     console.log('📝 Register page detected');
@@ -154,9 +154,9 @@
     const reqItems = document.querySelectorAll('#passwordRequirements li');
 
     // Toggle
-    document.querySelectorAll('.toggle-password').forEach(function(btn) {
+    document.querySelectorAll('.toggle-password').forEach(function (btn) {
       if (btn.id === 'loginToggle') return;
-      btn.addEventListener('click', function(e) {
+      btn.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('data-target');
         if (!targetId) return;
@@ -179,7 +179,7 @@
       const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(val);
       const rules = { length: hasLength, number: hasNumber, special: hasSpecial };
 
-      reqItems.forEach(function(li) {
+      reqItems.forEach(function (li) {
         const rule = li.getAttribute('data-rule');
         const met = rules[rule] || false;
         li.classList.toggle('met', met);
@@ -196,7 +196,7 @@
 
     // Real-time validation
     if (password) {
-      password.addEventListener('input', function() {
+      password.addEventListener('input', function () {
         checkPasswordStrength(this.value);
         clearError(confirmError);
         markInput(confirmPassword, null);
@@ -205,7 +205,7 @@
     }
 
     if (confirmPassword) {
-      confirmPassword.addEventListener('input', function() {
+      confirmPassword.addEventListener('input', function () {
         const pass = password ? password.value : '';
         const conf = this.value;
         if (conf.length === 0) {
@@ -220,7 +220,7 @@
     }
 
     if (email) {
-      email.addEventListener('input', function() {
+      email.addEventListener('input', function () {
         const val = this.value.trim();
         if (val.length === 0) {
           markInput(this, null);
@@ -234,7 +234,7 @@
     }
 
     // Submit
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const nameVal = fullName ? fullName.value.trim() : '';
@@ -268,8 +268,13 @@
       if (allValid) {
         try {
           await DB.register({ email: emailVal, password: passVal, name: nameVal });
-          showToast('🎉 Account created! Redirecting to login...', 'success');
-          setTimeout(() => window.location.href = 'index.html', 1600);
+          // ✅ Set session so user is considered logged in
+          sessionStorage.setItem('currentUser', emailVal);
+          sessionStorage.setItem('loggedIn', 'true');
+          showToast('🎉 Account created! Redirecting to set preferences...', 'success');
+          setTimeout(() => {
+            window.location.href = 'preference.html';
+          }, 1600);
         } catch (err) {
           showToast('Registration failed: ' + err.message, 'error');
         }
@@ -282,18 +287,18 @@
 
     // Checkbox clear errors
     if (terms) {
-      terms.addEventListener('change', function() {
+      terms.addEventListener('change', function () {
         if (this.checked) { clearError(termsError); this.closest('.checkbox-group').classList.remove('error'); }
       });
     }
     if (age) {
-      age.addEventListener('change', function() {
+      age.addEventListener('change', function () {
         if (this.checked) { clearError(ageError); this.closest('.checkbox-group').classList.remove('error'); }
       });
     }
 
     // Init password requirements
-    reqItems.forEach(function(li) {
+    reqItems.forEach(function (li) {
       li.classList.add('unmet');
       const icon = '✘';
       li.textContent = li.textContent.replace(/^[✔✘]\s/, '');

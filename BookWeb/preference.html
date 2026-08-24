@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Preferences · Litnest</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/preference.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Top Branding -->
+        <div class="brand">
+            <svg class="brand-icon" viewBox="0 0 24 24">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+            </svg>
+            Litnest
+        </div>
+
+        <!-- Center Emblem -->
+        <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+        </div>
+
+        <h1>Reading Preferences</h1>
+        <p class="subtitle">Tell us what you like so we can personalize your recommendations.</p>
+        <div class="badge">Optional — editable anytime from your profile</div>
+
+        <!-- Favorite Genres -->
+        <div class="section-title">
+            <svg viewBox="0 0 24 24">
+                <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Favorite Genres
+        </div>
+
+        <div class="category-label">Fiction</div>
+        <div class="tags-container" data-category="fiction">
+            <button class="tag" data-genre="Literary Fiction">Literary Fiction</button>
+            <button class="tag" data-genre="Contemporary Fiction">Contemporary Fiction</button>
+            <button class="tag" data-genre="Historical Fiction">Historical Fiction</button>
+            <button class="tag" data-genre="Romance">Romance</button>
+            <button class="tag" data-genre="Mystery">Mystery</button>
+            <button class="tag" data-genre="Thriller">Thriller</button>
+            <button class="tag" data-genre="Horror">Horror</button>
+            <button class="tag" data-genre="Fantasy">Fantasy</button>
+            <button class="tag" data-genre="Science Fiction">Science Fiction</button>
+            <button class="tag" data-genre="Adventure">Adventure</button>
+            <button class="tag" data-genre="Western">Western</button>
+        </div>
+
+        <div class="category-label">Non-Fiction</div>
+        <div class="tags-container" data-category="nonfiction">
+            <button class="tag" data-genre="Biography">Biography</button>
+            <button class="tag" data-genre="History">History</button>
+            <button class="tag" data-genre="Self-Help">Self-Help</button>
+            <button class="tag" data-genre="Psychology">Psychology</button>
+            <button class="tag" data-genre="Business">Business</button>
+            <button class="tag" data-genre="Finance">Finance</button>
+            <button class="tag" data-genre="Science">Science</button>
+            <button class="tag" data-genre="Technology">Technology</button>
+            <button class="tag" data-genre="Travel">Travel</button>
+            <button class="tag" data-genre="Cooking">Cooking</button>
+            <button class="tag" data-genre="Health &amp; Wellness">Health &amp; Wellness</button>
+        </div>
+
+        <div class="category-label">Children &amp; YA</div>
+        <div class="tags-container" data-category="ya">
+            <button class="tag" data-genre="Children's Fiction">Children's Fiction</button>
+            <button class="tag" data-genre="Middle Grade">Middle Grade</button>
+            <button class="tag" data-genre="Young Adult">Young Adult</button>
+            <button class="tag" data-genre="New Adult">New Adult</button>
+        </div>
+
+        <div class="category-label">Other</div>
+        <div class="tags-container" data-category="other">
+            <button class="tag" data-genre="Poetry">Poetry</button>
+            <button class="tag" data-genre="Drama">Drama</button>
+            <button class="tag" data-genre="Graphic Novels">Graphic Novels</button>
+            <button class="tag" data-genre="Comics">Comics</button>
+            <button class="tag" data-genre="Manga">Manga</button>
+            <button class="tag" data-genre="Manhwa">Manhwa</button>
+            <button class="tag" data-genre="Light Novels">Light Novels</button>
+            <button class="tag" data-genre="Short Stories">Short Stories</button>
+        </div>
+
+        <!-- Preferred Book Language -->
+        <div class="section-title section-title-spacing">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            Preferred Book Language
+        </div>
+
+        <div class="tags-container" data-category="languages">
+            <button class="tag" data-language="English">English</button>
+            <button class="tag" data-language="Filipino">Filipino</button>
+            <button class="tag" data-language="Spanish">Spanish</button>
+            <button class="tag" data-language="French">French</button>
+            <button class="tag" data-language="German">German</button>
+            <button class="tag" data-language="Japanese">Japanese</button>
+            <button class="tag" data-language="Korean">Korean</button>
+            <button class="tag" data-language="Chinese">Chinese</button>
+            <button class="tag" data-language="Italian">Italian</button>
+            <button class="tag" data-language="Portuguese">Portuguese</button>
+            <button class="tag" data-language="Other">Other</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Actions -->
+        <button class="btn-primary" id="savePreferencesBtn">Save Preferences</button>
+        <button class="btn-secondary" id="skipPreferencesBtn">Skip For Now</button>
+
+        <div class="footer-note">
+            Editable anytime from <span>Profile → Reading Preferences → Edit</span>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/db.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/preferences.js"></script>
+</body>
+
+</html>

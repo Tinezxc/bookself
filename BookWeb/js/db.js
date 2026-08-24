@@ -55,6 +55,26 @@ const DB = (function() {
       return await apiCall('update_user.php', 'POST', data);
     },
 
+    // ---------- Reading Preferences ----------
+    async getPreferences() {
+      const email = sessionStorage.getItem('currentUser');
+      if (!email) throw new Error('No logged-in user');
+      const response = await fetch(API_BASE + 'get_preferences.php?email=' + encodeURIComponent(email));
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to load preferences');
+      }
+      return result;
+    },
+
+    async savePreferences(prefs) {
+      const email = sessionStorage.getItem('currentUser');
+      if (!email) throw new Error('No logged-in user');
+      const data = { email, ...prefs };
+      return await apiCall('save_preferences.php', 'POST', data);
+    },
+    // ---------------------------------------------
+
     logout() {
       sessionStorage.removeItem('currentUser');
       sessionStorage.removeItem('loggedIn');
