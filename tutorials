@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 step 3 open your command prompt and paste this
 
-"C:\Users\Administrator\Desktop\BookWeb" "C:\xampp\htdocs\BookWeb" /E /I /H /Y
+xcopy "C:\Users\Administrator\Desktop\BookWeb" "C:\xampp\htdocs\BookWeb" /E /I /H /Y
 
 it's depends of your users name and administrator file url
 
